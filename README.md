@@ -5,7 +5,7 @@ Microservicio Spring Boot para el **Sistema de Gestión de Reservas de Eventos c
 
 Los tickets (PDF) se generan en un **EFS**, se suben a **AWS S3** con estructura
 `/{eventId}/{userId}/ticketNNNNN.pdf` y el servicio se despliega en **EC2** mediante
-**GitHub Actions + Docker Hub**.
+**GitHub Actions + Docker Hub**. (hola)
 
 ## Stack
 
