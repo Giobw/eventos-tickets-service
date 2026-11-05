@@ -1,7 +1,7 @@
 # Eventos Tickets Service
 
 Microservicio Spring Boot para el **Sistema de Gestión de Reservas de Eventos con Tickets**
-(CDY2204 – Desarrollo Cloud Native, Experiencia 1, Semana 3).
+( Desarrollo Cloud Native, Experiencia 1, Semana 3).
 
 Los tickets (PDF) se generan en un **EFS**, se suben a **AWS S3** con estructura
 `/{eventId}/{userId}/ticketNNNNN.pdf` y el servicio se despliega en **EC2** mediante
