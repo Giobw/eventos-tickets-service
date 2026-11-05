@@ -1,0 +1,34 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: eventos-tickets-service
+  datasource:
+    # Metadatos de tickets (H2 en archivo). En Docker se monta /app/data como volumen.
+    url: jdbc:h2:file:${DB_PATH:./data/ticketsdb}
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+app:
+  storage:
+    # Carpeta donde se monta el EFS dentro del contenedor (-v /mnt/efs:/app/efs)
+    efs-path: ${EFS_PATH:./efs}
+  s3:
+    bucket: ${S3_BUCKET:}
+    region: ${AWS_REGION:us-east-1}
+    # true = cada ticket generado se sube automáticamente a S3
+    auto-upload: ${S3_AUTO_UPLOAD:true}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
